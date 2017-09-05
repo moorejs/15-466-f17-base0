@@ -1,12 +1,20 @@
-# Base0
+# Hammer
 
-Base0 is the starter code for the game0 in the 15-466-f17 course. It was developed by Jim McCann, and is hereby released into the public domain.
+In this game, the player controls a hammer. The hammer may only strike the balls that are flying through the air with its sides. If the balls hit the top or bottom of the hammer, the balls are slowed and the hammer shrinks in size. If the hammer gets too small, you lose. You must destroy all balls to proceed to the next level (as indicated by the levels counter at the top of the game window). If you clear all windows, you unlock a special hammer color.
 
-Note that Base0 is attempting to illustrate a very straightfoward "get it done" philosophy of game code design -- I've purposefully removed some of the conveniences one typically uses to sweep things under the rug.
+See `screenshots/` for more samples of the gameplay. The game begins in a menu, as indicated by the red and green bars at the top.
 
-This is because game0 *does not need* such conveniences. It is simple because game0 is simple.
+This game was designed by bpx (see http://graphics.cs.cmu.edu/courses/15-466-f17/game0-designs/bpx/).
 
-## Requirements
+I implemented the game with 5 levels specifically. More can easily be added to the source.
+
+# Controls
+
+Click the right mouse button to start the game. If you reach a game over, you must click to restart.
+
+The mouse movement controls the hammer.
+
+## Requirements for building
 
  - glm
  - libSDL2
@@ -33,20 +41,3 @@ or:
 ```
   make
 ```
-
-### Windows
-
-Before building, clone [kit-libs-win](https://github.com/ixchow/kit-libs-win) into the `kit-libs-win` subdirectory:
-```
-  git clone https://github.com/ixchow/kit-libs-win
-```
-Now you can:
-```
-  nmake -f Makefile.win
-```
-or:
-```
-  cl.exe /EHsc /W3 /WX /MD /Ikit-libs-win\out\include /Ikit-libs-win\out\include\SDL2 main.cpp Draw.cpp gl_shims.cpp /link /SUBSYSTEM:CONSOLE /LIBPATH:kit-libs-win\out\lib SDL2main.lib SDL2.lib OpenGL32.lib
-  copy kit-libs-win\out\dist\SDL2.dll .
-```
-
